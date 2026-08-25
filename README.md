@@ -16,7 +16,6 @@ Contact: han.zhang7@unsw.edu.au
     examples/      one script per case in the paper; each is runnable on its own
     fem/           the staggered finite element solver used for the reference solutions
     tools/         scoring of a multi-crack run against the reference fields of the dataset
-    tests/         the anchor check, the surface-energy verification and the NURBS unit tests
 
 ## Requirements
 
@@ -59,15 +58,6 @@ reporting the Dice coefficient and the per-crack active or dormant classificatio
 The same geometry, material, boundary conditions and regularization length as the corresponding
 deep energy run; irreversibility through a history field, the crack through a phi = 1 condition
 on the notch nodes, and an alternating displacement and phase-field solve per load increment.
-
-## Tests
-
-    python tests/anchors.py          # bitwise reproduction of twelve recorded quantities
-    python tests/verify_profile.py   # surface energy of both densities on their optimal profile
-    python tests/test_iga_math.py    # NURBS basis, knot insertion and the geometry map
-
-`anchors.py` is the regression guard: any change to the package must leave all twelve anchors
-bitwise identical, since every published number was produced at those settings.
 
 ## Adding a case
 

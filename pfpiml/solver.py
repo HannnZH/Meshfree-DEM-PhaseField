@@ -183,7 +183,7 @@ def phi_forward(net, x, y, cfg):
        MUST match the phi that Problem.fields() hands the energy: a problem that envelopes the
        learnable channel (phi=0 edge strips) declares it via Problem.phi_envelope, applied here
        IDENTICALLY (same factor order), so phi_prev/e_ir can never diverge from the energy's
-       phi again. env=None keeps the original expression byte-for-byte (anchors)."""
+       phi again. env=None keeps the original expression byte-for-byte."""
     phi0 = phi0_field(x, y, cfg)
     if net is None:
         return phi0
@@ -210,7 +210,7 @@ def drive_field(net, x, y, cfg, u_delta, chunk=16384):
        in shear-dominated states (measured: spectral is ~53% of Amor's at the SENS corner), and
        for a proposal over-covering is safe while under-covering starves the process zone.
        Do NOT "align" it with the energy split: that narrows shear coverage, moves every MC
-       realization, and fails all 12 anchors."""
+       realization, and changes every published number."""
     outs = []
     for i in range(0, x.shape[0], chunk):
         xc = x[i:i + chunk].clone().requires_grad_(True)
