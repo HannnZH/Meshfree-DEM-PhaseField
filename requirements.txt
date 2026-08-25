@@ -1,0 +1,14 @@
+# Runtime dependencies. Versions are the ones the published results were produced with;
+# anything reasonably recent works, but pin these to reproduce the numbers exactly.
+#
+# Install torch first, matching your CUDA version, from https://pytorch.org -- the index URL
+# differs per platform, so it is deliberately not pinned to a build here. The solver runs on
+# the CPU as well, just slowly.
+torch>=2.0
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+
+# Only needed to regenerate the finite-element reference curves in FEM/pf_fem.py
+scikit-fem>=8.0
+# optional, picked up automatically if present: pypardiso, a faster direct solve for pf_fem.py
