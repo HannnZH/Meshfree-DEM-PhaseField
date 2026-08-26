@@ -31,12 +31,20 @@ Every script takes the solver flags and writes its output to `runs/<name>/`.
 
     python examples/sen_tension.py             # single-edge-notched tension
     python examples/sen_shear.py               # single-edge-notched shear
-    python examples/sen_shear.py --pf_order 4  # the same case, fourth-order density
     python examples/branching.py               # crack branching under isotropic driving
     python examples/coalescence.py             # coalescence of en-echelon cracks
     python examples/nucleation.py              # plate with a circular hole
     python examples/kirsch.py                  # its elastic stage against the Kirsch solution
     python examples/ring.py                    # thick-walled ring on one NURBS patch
+
+`--pf_order 4` swaps the second-order fracture energy density for the fourth-order one on the
+same discretization, and the paper reports it for the two single-edge-notched tests, for
+branching and for coalescence:
+
+    python examples/sen_shear.py --pf_order 4
+
+The Laplacian is taken by one further automatic-differentiation pass in the parametric
+coordinates, so the flag needs an identity geometry map and is refused on the ring.
 
 Add `--resume` to continue an interrupted run from the rolling checkpoint. The published
 settings are the defaults of each script; the table in the appendix of the paper lists them.
