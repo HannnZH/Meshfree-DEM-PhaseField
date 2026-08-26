@@ -7,6 +7,8 @@ points that are redrawn at every optimizer iteration. Essential boundary conditi
 through lifts, curved domains enter through a NURBS map, interior holes through a domain mask,
 and the second- and fourth-order fracture energy densities run on the same discretization.
 
+Preprint: https://arxiv.org/abs/2608.24126
+
 Contact: han.zhang7@unsw.edu.au
 
 ## Layout
@@ -64,3 +66,20 @@ on the notch nodes, and an alternating displacement and phase-field solve per lo
 Subclass `Problem` in `pfpiml/problems.py`, override the hooks that differ, and register it in
 `REGISTRY`. `pfpiml/multicrack.py` is a complete example, including a non-unit domain, its own
 boundary conditions and a phase-field condition on part of the boundary.
+
+## Citation
+
+    @article{zhang2026meshfree,
+      author  = {Zhang, Han and Makki Alamdari, Mehrisadat and Shahbodagh, Babak
+                 and Vahab, Mohammad and Anitescu, Cosmin and Rabczuk, Timon
+                 and Atroshchenko, Elena},
+      title   = {A mesh-free multiresolution deep energy method with phase-field
+                 modeling of brittle fracture},
+      journal = {arXiv preprint arXiv:2608.24126},
+      year    = {2026}
+    }
+
+## License
+
+A license has not been chosen yet. Please contact the authors before redistributing or
+reusing this code.
