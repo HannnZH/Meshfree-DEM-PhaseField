@@ -45,9 +45,6 @@ branching and for coalescence:
 
     python examples/sen_shear.py --pf_order 4
 
-The Laplacian is taken by one further automatic-differentiation pass in the parametric
-coordinates, so the flag needs an identity geometry map and is refused on the ring.
-
 Add `--resume` to continue an interrupted run from the rolling checkpoint. The published
 settings are the defaults of each script; the table in the appendix of the paper lists them.
 
