@@ -2,10 +2,12 @@
 
 Reference implementation for the paper of the same name. One neural network carries the
 displacement and phase fields, the coordinates enter it through a multiresolution grid of
-C1 quadratic B-spline features, and the incremental energy is minimized directly on integration
-points that are redrawn at every optimizer iteration. Essential boundary conditions hold exactly
+C1 quadratic B-spline features, which is a positional encoding rather than a mesh, and the
+incremental energy is minimized directly on integration points that are redrawn at every
+optimizer iteration. Essential boundary conditions hold exactly
 through lifts, curved domains enter through a NURBS map, interior holes through a domain mask,
-and the second- and fourth-order fracture energy densities run on the same discretization.
+and the second- and fourth-order fracture energy densities run on the same network and the
+same points.
 
 Preprint: https://arxiv.org/abs/2608.24126
 
@@ -37,8 +39,8 @@ Every script takes the solver flags and writes its output to `runs/<name>/`.
     python examples/kirsch.py                  # its elastic stage against the Kirsch solution
     python examples/ring.py                    # thick-walled ring on one NURBS patch
 
-`--pf_order 4` swaps the second-order fracture energy density for the fourth-order one on the
-same discretization, and the paper reports it for the two single-edge-notched tests, for
+`--pf_order 4` swaps the second-order fracture energy density for the fourth-order one and
+changes nothing else, and the paper reports it for the two single-edge-notched tests, for
 branching and for coalescence:
 
     python examples/sen_shear.py --pf_order 4
