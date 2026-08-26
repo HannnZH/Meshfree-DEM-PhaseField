@@ -88,5 +88,4 @@ boundary conditions and a phase-field condition on part of the boundary.
 
 ## License
 
-A license has not been chosen yet. Please contact the authors before redistributing or
-reusing this code.
+MIT, see `LICENSE`. If you use this code in work you publish, please cite the paper above.
